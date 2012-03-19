@@ -13,7 +13,7 @@ public class BlockListener implements Listener {
 	
 	@EventHandler
 	public void StopBreakBlock(BlockBreakEvent event){
-		if(event.getPlayer().isOp()){
+		if(event.getPlayer().isOp() || event.getPlayer().hasPermission("NoBreakBlock.bypass")){
 			event.setCancelled(false);
 			return;
 		}
@@ -23,7 +23,7 @@ public class BlockListener implements Listener {
 	
 	@EventHandler
 	public void StopBuildBlock(BlockPlaceEvent event){
-		if(event.getPlayer().isOp()){
+		if(event.getPlayer().isOp() || event.getPlayer().hasPermission("NoBreakBlock.bypass")){
 			event.setCancelled(false);
 			return;
 		}
@@ -33,7 +33,7 @@ public class BlockListener implements Listener {
 	
 	@EventHandler
 	public void StopIgniteBlock(BlockIgniteEvent event){
-		if(event.getPlayer().isOp()){
+		if(event.getPlayer().isOp() || event.getPlayer().hasPermission("NoBreakBlock.bypass")){
 			event.setCancelled(false);
 			return;
 		}
